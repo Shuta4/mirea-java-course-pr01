@@ -17,11 +17,19 @@ public class Factorial {
 
         System.out.print("Enter your number >> ");
         var n = in.nextInt();
+        if (n < 0) {
+            System.out.println("Number must be greater then 0.");
+            return;
+        }
+        if (n > 20) {
+            System.out.println("Number must be less then or equal 20.");
+            return;
+        }
         System.out.printf("%d! = %d\n", n, factorial(n));
     }
 
-    public static int factorial(int n) {
-        var result = 1;
+    public static long factorial(int n) {
+        var result = 1L;
         for (int i = 1; i <= n; i++) {
             result *= i;
         }
